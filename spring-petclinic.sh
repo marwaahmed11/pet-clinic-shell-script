@@ -40,10 +40,17 @@ sed -i "22 i  import org.springframework.boot.web.servlet.support.SpringBootServ
 
 sed -i '32s/public class PetClinicApplication {/public class PetClinicApplication extends SpringBootServletInitializer {/' /home/pet-clinic/.jenkins/workspace/app/spring-petclinic/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java
 
-mvn spring-javaformat:apply
-mvn clean
-mvn package
+cd /home/pet-clinic/.jenkins/workspace/app/spring-petclinic
+
+pwd
+
+./mvnw spring-javaformat:apply
+./mvnw clean
+./mvnw package
 
 cp /home/pet-clinic/.jenkins/workspace/app/spring-petclinic/target/spring-petclinic-3.1.0-SNAPSHOT.war  /home/pet-clinic/tomcat/apache-tomcat-10.1.10/webapps
+
+
+
 
 
